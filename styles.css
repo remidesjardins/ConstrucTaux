@@ -1,0 +1,250 @@
+body, h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #E5E5E5;
+  color: #333;
+}
+.dashboard {
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 20px;
+  width: 90%;
+  max-width: 500px;
+  margin: 20px auto;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px; /* Added horizontal padding to center elements */
+}
+.site-name {
+  font-size: 24px; /* Adjust font size as necessary */
+  font-weight: bold;
+  color: #013a63; /* Dark blue */
+  margin-right: auto; /* Pushes everything to the right of the site name to the right */
+}
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.form-control {
+  width: 100%;
+  padding: 10px; /* Adjust this value as needed to match other inputs */
+  border: 1px solid #D8D8D8;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box; /* Add this line */
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #013a63;
+  font-weight: 500;
+}
+.search-container {
+  text-align: center;
+  padding: 10px;
+}
+.search-box {
+  padding: 8px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 5px;
+}
+.search-button {
+  padding: 10px;
+  background-color: #013a63;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.search-button:hover {
+  background-color: #013a63;
+}
+.dashboard {
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 20px;
+  width: 90%;
+  max-width: 500px;
+  margin: 20px auto;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.header img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.stats-container {
+  margin-bottom: 20px;
+}
+.stat {
+  background: #F0F0F0;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+.stat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.stat-header h2 {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+.stat-header span {
+  background: #D8D8D8;
+  padding: 2px 8px;
+  border-radius: 5px;
+  font-size: 0.9em;
+}
+.stat-chart {
+  height: 100px;
+  background: #D8D8D8; /* Placeholder for chart */
+}
+.footer {
+  text-align: center;
+  padding: 15px 0;
+  font-size: 0.9em;
+}
+/* Style for the progress bar */
+.progress-bar-container {
+  width: 100%;
+  background: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+progress {
+  width: 100%;
+  -webkit-appearance: none; /* Override default appearance */
+  appearance: none; /* Remove default appearance */
+  height: 20px; /* Specified height */
+}
+
+progress::-webkit-progress-bar {
+  background-color: #e0e0e0;
+  border-radius: 5px;
+}
+
+progress::-webkit-progress-value {
+  background-color: #013a63;
+  border-radius: 5px;
+}
+
+progress::-moz-progress-bar {
+  background-color: #4b8df8;
+  border-radius: 5px;
+}
+/* Styles supplémentaires pour le bouton de recherche */
+.search-container {
+  text-align: center;
+  padding: 10 px;
+}
+
+.search-box {
+  padding: 8px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 5px;
+}
+
+.search-button {
+  padding: 8px;
+  background-color: #013a63;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #013a63;
+}
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px; /* Ajouté un padding horizontal pour centrer les éléments */
+}
+
+.site-name {
+  font-size: 24px; /* Ajustez la taille de police comme nécessaire */
+  font-weight: bold;
+  color: #013a63; /* Bleu foncé */
+  margin-right: auto; /* Pousse tout sur la droite du nom du site vers la droite */
+}
+
+/* Styles supplémentaires pour la liste d'améliorations */
+.improvements {
+  margin-top: 20px;
+  background: #F0F0F0;
+  padding: 15px;
+  border-radius: 10px;
+  list-style: none; /* Retire les puces de liste par défaut */
+}
+
+.improvements li {
+  margin-bottom: 10px;
+  padding-left: 15px; /* Espacement à gauche pour les puces personnalisées ou les numéros */
+}
+
+.improvements li:before {
+  content: '•'; /* Ajoute une puce personnalisée */
+  color: #4b8df8; /* Couleur de la puce */
+  display: inline-block;
+  width: 20px; /* Espace pour la puce */
+  margin-leform-ft: -20px; /* Alignement de la puce */
+}
+.form-control, .form-control-fullwidth {
+  padding: 10px;
+  border: 1px solid #D8D8D8;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 5px; /* Adjust spacing below inputs */
+}
+.form-control-fullwidth {
+  width: calc(100% - 20px); /* Full width minus padding */
+}
+.search-button {
+  padding: 10px 0;
+  width: 100%; /* Make the button full width */
+}
+
+/* Add new style for textarea */
+.form-control-textarea {
+  height: 150px; /* Set a fixed height */
+  resize: vertical; /* Allows the user to vertically resize the textarea */
+}
+
+/* Ensure consistent margin for all input elements */
+.form-control, .form-control-fullwidth, .search-button {
+  margin-top: 10px;
+}
+.form-control, .form-control-fullwidth, .form-control-textarea {
+  /* existing styles */
+  box-sizing: border-box; /* Add this line */
+}
+#stats-block {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+}
+
+#stats-block.visible {
+  max-height: 1000px; /* Adjust this value based on the maximum possible height of your stats block */
+}

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ConstrucTaux</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <title>Mobile Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD95RSCT8ytUMBSu1hLLjzfxQH8xpYXhmg&libraries=places&language=fr"></script>
+  <script src="script.js"></script>
+</head>
+<body>
+<div class="header-top">
+  <div class="site-name">ConstrucTaux</div>
+</div>
+<div class="dashboard">
+  <form class="construction-form">
+    <div class="form-group">
+      <label for="city">Choix de la ville:</label>
+      <input type="text" id="city" name="city" class="form-control" placeholder="Entrez la ville" required>
+    </div>
+    <div class="form-group">
+      <label for="construction-type">Type de construction:</label>
+      <select id="construction-type" name="construction_type" class="form-control" required>
+        <option value="">--Sélectionnez--</option>
+        <option value="house-extension">Agrandissement de maison</option>
+        <option value="pool">Piscine</option>
+        <option value="garden-shed">Abris de jardin</option>
+        <option value="garage">Garage</option>
+        <option value="conservatory">Véranda/Serre</option>
+        <option value="secondary-dwelling">Logement secondaire/Annexe</option>
+        <option value="roof-facade">Toiture/Façade</option>
+        <option value="solar-installation">Installation solaire</option>
+        <option value="commercial-development">Développement commercial</option>
+      </select>
+    </div>
+
+    <!-- Form groups for each construction type -->
+    <!-- House Extensions -->
+    <div class="form-group construction-detail" id="house-extension-details" style="display: none;">
+      <label for="extension-area">Surface totale de l'agrandissement (en m²):</label>
+      <input type="number" id="extension-area" name="extension_area" class="form-control" placeholder="En mètres carrés" required>
+
+      <label for="extension-stories">Nombre d'étages:</label>
+      <input type="number" id="extension-stories" name="extension_stories" class="form-control" placeholder="Nombre d'étages" required>
+
+      <label for="extension-materials">Matériaux à utiliser:</label>
+      <select id="extension-materials" name="extension_materials" class="form-control" required>
+        <option value="">--Sélectionnez--</option>
+        <option value="brick">Brique</option>
+        <option value="wood">Bois</option>
+        <option value="concrete">Béton</option>
+        <!-- Add other material options as needed -->
+      </select>
+
+      <label for="extension-proximity">Proximité avec les limites de la propriété:</label>
+      <input type="text" id="extension-proximity" name="extension_proximity" class="form-control" placeholder="Description de la proximité" required>
+
+      <label for="extension-impact">Impact sur la structure existante:</label>
+      <textarea id="extension-impact" name="extension_impact" class="form-control form-control-textarea" placeholder="Décrivez l'impact sur la structure existante" required></textarea>
+    </div>
+
+
+    <!-- Pools -->
+    <div class="form-group construction-detail" id="pool-details" style="display: none;">
+      <label for="pool-dimensions">Dimensions de la piscine (Longueur x Largeur en mètres):</label>
+      <input type="text" id="pool-dimensions" name="pool_dimensions" class="form-control" placeholder="Ex: 8x4" required>
+
+      <label for="pool-depth">Profondeur de la piscine (en mètres):</label>
+      <input type="number" id="pool-depth" name="pool_depth" class="form-control" placeholder="Profondeur" required>
+
+      <label for="pool-type">Type de piscine:</label>
+      <select id="pool-type" name="pool_type" class="form-control" required>
+        <option value="">--Sélectionnez--</option>
+        <option value="in-ground">Enterrée</option>
+        <option value="above-ground">Hors-sol</option>
+      </select>
+
+      <label for="pool-filtration">Type de système de filtration:</label>
+      <select id="pool-filtration" name="pool_filtration" class="form-control" required>
+        <option value="">--Sélectionnez--</option>
+        <option value="sand">Sable</option>
+        <option value="cartridge">Cartouche</option>
+        <option value="diatomaceous">Diatomée</option>
+        <!-- Add other filtration types as needed -->
+      </select>
+
+      <label for="pool-proximity">Proximité aux limites de la propriété:</label>
+      <input type="text" id="pool-proximity" name="pool_proximity" class="form-control" placeholder="Description de la proximité" required>
+
+      <label for="pool-safety">Caractéristiques de sécurité:</label>
+      <textarea id="pool-safety" name="pool_safety" class="form-control form-control-textarea" placeholder="Décrivez les caractéristiques de sécurité" required></textarea>
+    </div>
+
+    <!-- Garden Sheds -->
+    <div class="form-group construction-detail" id="garden-shed-details" style="display: none;">
+      <label for="shed-dimensions">Dimensions de l'abri (Longueur x Largeur x Hauteur en mètres):</label>
+      <input type="text" id="shed-dimensions" name="shed_dimensions" class="form-control" placeholder="Ex: 3x2x2" required>
+
+      <label for="shed-materials">Matériaux de l'abri:</label>
+      <select id="shed-materials" name="shed_materials" class="form-control" required>
+        <option value="">--Sélectionnez--</option>
+        <option value="wood">Bois</option>
+        <option value="metal">Métal</option>
+        <option value="plastic">Plastique</option>
+        <!-- Add other material options as needed -->
+      </select>
+
+      <label for="shed-color">Couleur de l'abri:</label>
+      <input type="text" id="shed-color" name="shed_color" class="form-control" placeholder="Couleur" required>
+
+      <label for="shed-location">Emplacement sur la propriété:</label>
+      <input type="text" id="shed-location" name="shed_location" class="form-control" placeholder="Description de l'emplacement" required>
+
+      <label for="shed-foundation">Type de fondation:</label>
+      <select id="shed-foundation" name="shed_foundation" class="form-control" required>
+        <option value="">--Sélectionnez--</option>
+        <option value="concrete">Béton</option>
+        <option value="wood">Bois</option>
+        <option value="none">Aucune</option>
+        <!-- Add other foundation types as needed -->
+      </select>
+
+      <label for="shed-use">Utilisation prévue (stockage, atelier, ...):</label>
+      <textarea id="shed-use" name="shed_use" class="form-control form-control-textarea" placeholder="Décrivez l'utilisation prévue" required></textarea>
+    </div>
+
+    <!-- Garages -->
+    <div class="form-group construction-detail" id="garage-details" style="display: none;">
+      <label for="garage-size">Taille et capacité du garage (Nombre de véhicules):</label>
+      <input type="number" id="garage-size" name="garage_size" class="form-control" placeholder="Nombre de véhicules" required>
+
+      <label for="garage-type">Type de garage:</label>
+      <select id="garage-type" name="garage_type" class="form-control" required>
+        <option value="">--Sélectionnez--</option>
+        <option value="attached">Attaché</option>
+        <option value="detached">Détaché</option>
+      </select>
+
+      <label for="garage-materials">Matériaux utilisés:</label>
+      <select id="garage-materials" name="garage_materials" class="form-control" required>
+        <option value="">--Sélectionnez--</option>
+        <option value="brick">Brique</option>
+        <option value="wood">Bois</option>
+        <option value="concrete">Béton</option>
+        <!-- Add other material options as needed -->
+      </select>
+
+      <label for="garage-access">Accès (Disposition de l'allée):</label>
+      <input type="text" id="garage-access" name="garage_access" class="form-control" placeholder="Description de l'accès" required>
+
+      <label for="garage-utilities">Exigences en électricité et plomberie:</label>
+      <textarea id="garage-utilities" name="garage_utilities" class="form-control form-control-textarea" placeholder="Décrivez les exigences" required></textarea>
+    </div>
+
+    <!-- Conservatories and Greenhouses -->
+    <div class="form-group construction-detail" id="conservatory-details" style="display: none;">
+      <label for="conservatory-dimensions">Dimensions (Longueur x Largeur en mètres):<label>
+        <input type="text" id="conservatory-dimensions" name="conservatory_dimensions" class="form-control" placeholder="Ex: 6x4" required>
+
+        <label for="conservatory-location">Emplacement sur la propriété:</label>
+        <input type="text" id="conservatory-location" name="conservatory_location" class="form-control" placeholder="Description de l'emplacement" required>
+
+        <label for="conservatory-glazing">Type de vitrage:</label>
+        <select id="conservatory-glazing" name="conservatory_glazing" class="form-control" required>
+          <option value="">--Sélectionnez--</option>
+          <option value="glass">Verre</option>
+          <option value="plastic">Plastique</option>
+          <!-- Add other glazing options as needed -->
+        </select>
+
+        <label for="conservatory-heating">Système de chauffage et de ventilation:</label>
+        <input type="text" id="conservatory-heating" name="conservatory_heating" class="form-control" placeholder="Type de système" required>
+
+        <label for="conservatory-connection">Connexion au bâtiment principal:</label>
+        <select id="conservatory-connection" name="conservatory_connection" class="form-control" required>
+          <option value="">--Sélectionnez--</option>
+          <option value="connected">Connecté</option>
+          <option value="separate">Séparé</option>
+        </select>
+
+        <label for="conservatory-purpose">Objectif (Culture de plantes, espace de vie supplémentaire, …):</label>
+        <textarea id="conservatory-purpose" name="conservatory_purpose" class="form-control form-control-textarea" placeholder="Décrivez l'objectif" required></textarea>
+    </div>
+
+
+    <!-- Secondary Dwellings or Annexes -->
+    <div class="form-group construction-detail" id="secondary-dwelling-details" style="display: none;">
+      <label for="dwelling-area">Surface totale (en m²):</label>
+      <input type="number" id="dwelling-area" name="dwelling_area" class="form-control" placeholder="En mètres carrés" required>
+
+      <label for="dwelling-rooms">Nombre de pièces:</label>
+      <input type="number" id="dwelling-rooms" name="dwelling_rooms" class="form-control" placeholder="Nombre de pièces" required>
+
+      <label for="dwelling-utilities">Services et utilités (eau, électricité, ...):</label>
+      <textarea id="dwelling-utilities" name="dwelling_utilities" class="form-control form-control-textarea" placeholder="Décrivez les services et utilités" required></textarea>
+
+      <label for="dwelling-access">Accès et arrangement de stationnement:</label>
+      <input type="text" id="dwelling-access" name="dwelling_access" class="form-control" placeholder="Description de l'accès et du stationnement" required>
+
+      <label for="dwelling-kitchen-bathroom">Installations de cuisine et salle de bain:</label>
+      <textarea id="dwelling-kitchen-bathroom" name="dwelling_kitchen_bathroom" class="form-control form-control-textarea" placeholder="Décrivez les installations" required></textarea>
+
+      <label for="dwelling-zoning">Conformité aux lois de zonage local:</label>
+      <select id="dwelling-zoning" name="dwelling_zoning" class="form-control" required>
+        <option value="">--Sélectionnez--</option>
+        <option value="compliant">Conforme</option>
+        <option value="non-compliant">Non conforme</option>
+      </select>
+    </div>
+
+    <!-- Roofing and Facades -->
+    <div class="form-group construction-detail" id="roof-facade-details" style="display: none;">
+      <label for="roof-facade-materials">Type de matériaux utilisés:</label>
+      <select id="roof-facade-materials" name="roof_facade_materials" class="form-control" required>
+        <option value="">--Sélectionnez--</option>
+        <option value="tiles">Tuiles</option>
+        <option value="shingles">Bardeaux</option>
+        <option value="metal">Métal</option>
+        <option value="concrete">Béton</option>
+        <!-- Add other material options as needed -->
+      </select>
+
+      <label for="roof-facade-color-style">Couleur et style:</label>
+      <input type="text" id="roof-facade-color-style" name="roof_facade_color_style" class="form-control" placeholder="Décrivez couleur et style" required>
+
+      <label for="roof-facade-structural-modifications">Modifications structurelles:</label>
+      <textarea id="roof-facade-structural-modifications" name="roof_facade_structural_modifications" class="form-control form-control-textarea" placeholder="Décrivez les modifications structurelles" required></textarea>
+
+      <label for="roof-facade-insulation-ventilation">Impact sur l'isolation et la ventilation:</label>
+      <textarea id="roof-facade-insulation-ventilation" name="roof_facade_insulation_ventilation" class="form-control form-control-textarea" placeholder="Décrivez l'impact sur l'isolation et la ventilation" required></textarea>
+
+      <label for="roof-facade-compliance">Conformité avec l'esthétique du bâtiment local:</label>
+      <select id="roof-facade-compliance" name="roof_facade_compliance" class="form-control" required>
+        <option value="">--Sélectionnez--</option>
+        <option value="compliant">Conforme</option>
+        <option value="non-compliant">Non conforme</option>
+      </select>
+    </div>
+
+
+    <!-- Solar Installation -->
+    <div class="form-group construction-detail" id="solar-installation-details" style="display: none;">
+      <label for="solar-panel-number">Nombre et type de panneaux solaires:</label>
+      <input type="text" id="solar-panel-number" name="solar_panel_number" class="form-control" placeholder="Ex: 10 panneaux monocristallins" required>
+
+      <label for="solar-panel-angle">Angle et orientation du toit:</label>
+      <input type="text" id="solar-panel-angle" name="solar_panel_angle" class="form-control" placeholder="Ex: 30 degrés Sud-Est" required>
+
+      <label for="solar-grid-connection">Connexion au réseau électrique:</label>
+      <select id="solar-grid-connection" name="solar_grid_connection" class="form-control" required>
+        <option value="">--Sélectionnez--</option>
+        <option value="yes">Oui</option>
+        <option value="no">Non</option>
+      </select>
+
+      <label for="solar-roof-impact">Impact sur la structure du toit:</label>
+      <textarea id="solar-roof-impact" name="solar_roof_impact" class="form-control form-control-textarea" placeholder="Décrivez l'impact sur la structure du toit" required></textarea>
+
+      <label for="solar-energy-regulations">Conformité avec les réglementations énergétiques:</label>
+      <select id="solar-energy-regulations" name="solar_energy_regulations" class="form-control" required>
+        <option value="">--Sélectionnez--</option>
+        <option value="compliant">Conforme</option>
+        <option value="non-compliant">Non conforme</option>
+      </select>
+    </div>
+
+    <!-- Commercial Development -->
+    <div class="form-group construction-detail" id="commercial-development-details" style="display: none;">
+      <label for="commercial-size-scale">Taille et échelle du développement:</label>
+      <input type="text" id="commercial-size-scale" name="commercial_size_scale" class="form-control" placeholder="Ex: 5000 m², 3 étages" required>
+
+      <label for="commercial-activity-type">Type d'activité commerciale:</label>
+      <input type="text" id="commercial-activity-type" name="commercial_activity_type" class="form-control" placeholder="Ex: Commerce de détail, bureaux" required>
+
+      <label for="commercial-traffic-impact">Impact sur le trafic et installations de stationnement:</label>
+      <textarea id="commercial-traffic-impact" name="commercial_traffic_impact" class="form-control form-control-textarea" placeholder="Décrivez l'impact sur le trafic et le stationnement" required></textarea>
+
+      <label for="commercial-environmental-impact">Évaluation de l'impact environnemental:</label>
+      <textarea id="commercial-environmental-impact" name="commercial_environmental_impact" class="form-control form-control-textarea" placeholder="Décrivez l'évaluation de l'impact environnemental" required></textarea>
+
+      <label for="commercial-zoning-compliance">Conformité avec les réglementations de zonage et de planification:</label>
+      <select id="commercial-zoning-compliance" name="commercial_zoning_compliance" class="form-control" required>
+        <option value="">--Sélectionnez--</option>
+        <option value="compliant">Conforme</option>
+        <option value="non-compliant">Non conforme</option>
+      </select>
+    </div>
+
+
+
+    <!-- Add similar groups for garage, conservatory, secondary dwelling, etc. -->
+
+    <div class="search-container">
+      <button type="submit" class="search-button">Rechercher</button>
+    </div>
+  </form>
+</div>
+
+<div class="dashboard" id="stats-block">
+
+  <div class="dashboard">
+    <div class="header">
+      <img src="illustration_2.webp" alt="Header Image">
+    </div>
+
+    <div class="stats-container">
+      <div class="stat">
+        <div class="stat-header">
+          <h2>Vos chances d'obtenir un permis : </h2>
+          <span id="permit-chance">50%</span>
+        </div>
+        <div class="progress-bar-container">
+          <progress id="permit-progress" value="50" max="100"></progress>
+        </div>
+      </div>
+
+
+      <div class="stat">
+        <div class="stat-header">
+          <h2>Votre taux écologique : </h2>
+          <span id="ecologic-chance">10%</span>
+        </div>
+        <div class="progress-bar-container">
+          <progress id="ecologic-progress" value="10" max="100"></progress>
+        </div>
+      </div>
+
+
+      <!-- Repeat for other statistics -->
+
+    </div>
+
+    <div class="stat-header">
+      <h2>Vos pistes d'améliorations</h2>
+    </div>
+    <ul class="improvements">
+      <li>Proposer une meilleure isolation 1</li>
+      <li>Réduire la taille des fenêtres </li>
+
+
+    </ul>
+
+  </div>
+</div>
+<div class="footer">
+  &copy; 2023 ConstrucTaux. All Rights Reserved.
+</div>
+</body>
+</html>
