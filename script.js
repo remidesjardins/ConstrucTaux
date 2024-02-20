@@ -58,3 +58,12 @@ new google.maps.places.Autocomplete(input, options);
 
 google.maps.event.addDomListener(window, 'load', initAutocomplete);
 });
+
+function loadMap() {
+    // Récupérer la valeur du champ
+    var ville = document.getElementById('city').value;
+    console.log(ville);
+
+    // Injection du code HTML avec la valeur de la ville dans la balise <div>
+    document.getElementById('map').innerHTML = `<iframe width="450" height="450" style="border:0"Loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=${ville}&key=AIzaSyDi2q6zJczhuf3onu0GapJtGUCNB4rGhlA"></iframe>`;
+}

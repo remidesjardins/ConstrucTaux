@@ -164,10 +164,12 @@
 
       <label for="garage-utilities">Exigences en électricité et plomberie:</label>
       <textarea id="garage-utilities" name="garage_utilities" class="form-control form-control-textarea" placeholder="Décrivez les exigences" required></textarea>
+
     </div>
 
     <!-- Conservatories and Greenhouses -->
     <div class="form-group construction-detail" id="conservatory-details" style="display: none;">
+
       <label for="conservatory-dimensions">Dimensions (Longueur x Largeur en mètres):<label>
         <input type="text" id="conservatory-dimensions" name="conservatory_dimensions" class="form-control" placeholder="Ex: 6x4" required>
 
@@ -194,6 +196,7 @@
 
         <label for="conservatory-purpose">Objectif (Culture de plantes, espace de vie supplémentaire, …):</label>
         <textarea id="conservatory-purpose" name="conservatory_purpose" class="form-control form-control-textarea" placeholder="Décrivez l'objectif" required></textarea>
+
     </div>
 
 
@@ -305,7 +308,7 @@
     <!-- Add similar groups for garage, conservatory, secondary dwelling, etc. -->
 
     <div class="search-container">
-      <button type="submit" class="search-button">Rechercher</button>
+      <button type="submit" class="search-button" id="sub-Button" onclick="loadMap()">Rechercher</button>
     </div>
   </form>
 </div>
@@ -313,8 +316,8 @@
 <div class="dashboard" id="stats-block">
 
   <div class="dashboard">
-    <div class="header">
-      <img src="illustration_2.webp" alt="Header Image">
+    <div class="header" id="map">
+
     </div>
 
     <div class="stats-container">
