@@ -64,6 +64,10 @@ function loadMap() {
     var ville = document.getElementById('city').value;
     console.log(ville);
 
+    if(!ville){
+        return;
+    }
+
     // Injection du code HTML avec la valeur de la ville dans la balise <div>
     document.getElementById('map').innerHTML = `<iframe width="450" height="450" style="border:0"Loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=${ville}&key=AIzaSyDi2q6zJczhuf3onu0GapJtGUCNB4rGhlA"></iframe>`;
 }
