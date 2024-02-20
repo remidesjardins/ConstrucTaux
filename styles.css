@@ -22,12 +22,27 @@ body {
   align-items: center;
   padding: 10px 20px; /* Added horizontal padding to center elements */
 }
-.site-name {
-  font-size: 24px; /* Adjust font size as necessary */
-  font-weight: bold;
-  color: #ff1f15;
-  margin-right: auto; /* Pushes everything to the right of the site name to the right */
+.site-branding {
+  display: flex;
+  align-items: center; /* Cela centrera l'image et le texte verticalement */
+  justify-content: flex-start; /* Cela alignera l'image à gauche et le texte à droite de l'image */
 }
+
+.logo {
+  width: 15%; /* ou la taille que vous souhaitez pour votre logo */
+  height: 15%; /* ou la taille que vous souhaitez pour votre logo */
+  /* Assurez-vous de ne pas étirer l'image */
+  object-fit: contain;
+}
+
+.site-name {
+  font-size: 150%;
+  font-weight: bold;
+  color: #b3331b;
+  margin-left: -1em; /* Ajustez cette valeur pour espacer le texte du logo */
+  /* Aucun besoin de définir width ou height ici, à moins que vous ne souhaitiez une dimension spécifique */
+}
+
 .form-group {
   margin-bottom: 15px;
   display: flex;
@@ -181,12 +196,7 @@ progress::-moz-progress-bar {
   padding: 10px 20px; /* Ajouté un padding horizontal pour centrer les éléments */
 }
 
-.site-name {
-  font-size: 24px; /* Ajustez la taille de police comme nécessaire */
-  font-weight: bold;
-  color: #b3331b;
-  margin-right: auto; /* Pousse tout sur la droite du nom du site vers la droite */
-}
+
 
 /* Styles supplémentaires pour la liste d'améliorations */
 .improvements {

@@ -13,7 +13,10 @@
 </head>
 <body>
 <div class="header-top">
-  <div class="site-name">ConstrucTaux</div>
+  <div class="site-branding">
+    <img class =  "logo" src="logo.png">
+    <span class= "site-name">ConstrucTaux</span>
+  </div>
 </div>
 <div class="dashboard">
   <form class="construction-form">
@@ -56,7 +59,15 @@
       </select>
 
       <label for="extension-proximity">Proximité avec les limites de la propriété:</label>
-      <input type="text" id="extension-proximity" name="extension_proximity" class="form-control" placeholder="Description de la proximité" required>
+      <select id="extension-proximity" name="extension_proximity" class="form-control" required>
+        <option value="">--Sélectionnez--</option>
+        <option value="stuck">Collé</option>
+        <option value="very-near">Très proche (- 5 mètres)</option>
+        <option value="near">Proche  (5 - 10 mètres)</option>
+        <option value="normal">Normal (10 - 15 mètres)</option>
+        <option value="far">Éloigné (15 - 25 mètres)</option>
+        <option value="very-far">Très éloigné (+ 25 mètres)</option>
+      </select>
 
       <label for="extension-impact">Impact sur la structure existante:</label>
       <textarea id="extension-impact" name="extension_impact" class="form-control form-control-textarea" placeholder="Décrivez l'impact sur la structure existante" required></textarea>
