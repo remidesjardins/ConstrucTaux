@@ -4,10 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ConstrucTaux</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-  <title>Mobile Dashboard</title>
+  <title>ConstrucTaux</title>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD95RSCT8ytUMBSu1hLLjzfxQH8xpYXhmg&libraries=places&language=fr"></script>
   <script src="script.js"></script>
 </head>
@@ -70,7 +72,15 @@
       </select>
 
       <label for="extension-impact">Impact sur la structure existante:</label>
-      <textarea id="extension-impact" name="extension_impact" class="form-control form-control-textarea" placeholder="Décrivez l'impact sur la structure existante" required></textarea>
+      <select id="extension-impact" name="extension_impact" class="form-control" required>
+        <option value="">--Sélectionnez--</option>
+        <option value="very-weak">Très faible</option>
+        <option value="weak">Faible</option>
+        <option value="mid">Moyen</option>
+        <option value="high">Élevé</option>
+        <option value="very-high">Très élevé</option>
+        <option value="very-far">Très éloigné (+ 25 mètres)</option>
+      </select>
     </div>
 
 
@@ -198,8 +208,6 @@
         <textarea id="conservatory-purpose" name="conservatory_purpose" class="form-control form-control-textarea" placeholder="Décrivez l'objectif" required></textarea>
 
     </div>
-
-
     <!-- Secondary Dwellings or Annexes -->
     <div class="form-group construction-detail" id="secondary-dwelling-details" style="display: none;">
       <label for="dwelling-area">Surface totale (en m²):</label>
