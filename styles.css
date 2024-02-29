@@ -1,258 +1,323 @@
+/* Réinitialisation de base pour les éléments HTML courants */
 body, h1, h2, h3, p {
-  margin: 0;
-  padding: 0;
+  margin: 0; /* Suppression des marges par défaut */
+  padding: 0; /* Suppression des paddings par défaut */
 }
+
+/* Styles généraux du corps du document */
 body {
-  font-family: 'Roboto Light', sans-serif;
-  background: #fff1f0;
-  color: #333;
+  font-family: 'Roboto Light', sans-serif; /* Police de caractère pour tout le document */
+  background: #fff1f0; /* Couleur de fond du document */
+  color: #333; /* Couleur de texte par défaut */
 }
+
+/* Styles pour le conteneur principal du tableau de bord */
 .dashboard {
-  background: #ffdedd;
-  border-radius: 20px;
-  padding: 20px;
-  width: 90%;
-  max-width: 500px;
-  margin: 20px auto;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  background: #ffdedd; /* Couleur de fond du tableau de bord */
+  border-radius: 20px; /* Bordures arrondies */
+  padding: 20px; /* Padding intérieur pour l'espacement */
+  width: 90%; /* Largeur relative par rapport au conteneur parent */
+  max-width: 500px; /* Largeur maximale pour une meilleure lisibilité sur les grands écrans */
+  margin: 20px auto; /* Centrage du tableau de bord avec une marge */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Ombre portée pour un effet de profondeur */
 }
+
+/* Styles pour la barre d'en-tête supérieure */
 .header-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px; /* Added horizontal padding to center elements */
+  display: flex; /* Utilisation de Flexbox pour une mise en page flexible */
+  justify-content: space-between; /* Espacement entre les éléments */
+  align-items: center; /* Alignement vertical des éléments */
+  padding: 10px 20px; /* Padding pour l'espacement interne */
 }
+
+/* Styles pour le branding du site (logo et nom) */
 .site-branding {
-  display: flex;
-  align-items: center; /* Cela centrera l'image et le texte verticalement */
-  justify-content: flex-start; /* Cela alignera l'image à gauche et le texte à droite de l'image */
+  display: flex; /* Utilisation de Flexbox pour une mise en page flexible */
+  align-items: center; /* Alignement vertical des éléments (logo et texte) */
+  justify-content: flex-start; /* Alignement à gauche des éléments */
 }
 
+/* Styles pour le logo du site */
 .logo {
-  width: 15%; /* ou la taille que vous souhaitez pour votre logo */
-  height: 15%; /* ou la taille que vous souhaitez pour votre logo */
-  object-fit: contain;
+  width: 15%; /* Largeur du logo */
+  height: 15%; /* Hauteur du logo */
+  object-fit: contain; /* S'assure que le logo est bien proportionné */
 }
 
+/* Styles pour le nom du site */
 .site-name {
-  font-size: 150%;
-  font-family: 'Montserrat';
-  font-weight: 400;
-  color: #b3331b;
-  margin-left: -1em; /* Ajustez cette valeur pour espacer le texte du logo */
+  font-size: 150%; /* Taille de la police plus grande pour le nom du site */
+  font-family: 'Montserrat'; /* Police spécifique pour le nom du site */
+  font-weight: 400; /* Poids de la police */
+  color: #b3331b; /* Couleur de la police */
+  margin-left: -1em; /* Ajustement de l'espacement à gauche pour aligner le texte avec le logo */
 }
 
+/* Styles pour les groupes de formulaires */
 .form-group {
-  margin-bottom: 15px;
-  display: flex;
-  flex-direction: column;
+  margin-bottom: 15px; /* Espace en dessous de chaque groupe pour la séparation */
+  display: flex; /* Utilise Flexbox pour une mise en page flexible */
+  flex-direction: column; /* Organise les éléments en colonne */
 }
+
+/* Styles pour les contrôles de formulaire (input, select, textarea) */
 .form-control {
-  width: 100%;
-  padding: 10px; /* Adjust this value as needed to match other inputs */
-  border: 1px solid #D8D8D8;
-  border-radius: 5px;
-  font-size: 16px;
-  box-sizing: border-box; /* Add this line */
+  width: 100%; /* Prend toute la largeur disponible du conteneur parent */
+  padding: 10px; /* Espacement intérieur pour le texte */
+  border: 1px solid #D8D8D8; /* Bordure subtile pour le contraste */
+  border-radius: 5px; /* Bordures arrondies pour l'esthétique */
+  font-size: 16px; /* Taille de police pour une meilleure lisibilité */
+  box-sizing: border-box; /* S'assure que padding et border sont inclus dans la largeur et hauteur */
 }
 
+/* Styles pour les étiquettes (labels) des champs de formulaire */
 label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: 500;
+  display: block; /* Affiche le label sur sa propre ligne */
+  margin-bottom: 5px; /* Espacement en dessous du label */
+  font-weight: 500; /* Poids de la police pour une meilleure visibilité */
 }
+
+/* Conteneur pour le bouton de recherche */
 .search-container {
-  text-align: center;
-  padding: 10px;
+  text-align: center; /* Centre le contenu horizontalement */
+  padding: 10px; /* Espacement intérieur autour du contenu */
 }
+
+/* Styles appliqués à la boîte de recherche (si présente) */
 .search-box {
-  padding: 8px;
-  margin-right: 5px;
-  border: none;
-  border-radius: 5px;
+  padding: 8px; /* Espacement intérieur pour le texte */
+  margin-right: 5px; /* Espacement à droite pour séparer des éléments adjacents */
+  border: none; /* Aucune bordure pour un look moderne */
+  border-radius: 5px; /* Bordures arrondies pour l'esthétique */
 }
+
+/* Styles pour le bouton de recherche */
 .search-button {
-  padding: 10px;
-  background-color: #ff1f15;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  padding: 10px; /* Espacement intérieur pour le texte */
+  background-color: #ff1f15; /* Couleur de fond pour attirer l'attention */
+  color: white; /* Couleur de texte pour le contraste */
+  border: none; /* Aucune bordure pour un look moderne */
+  border-radius: 5px; /* Bordures arrondies pour l'esthétique */
+  cursor: pointer; /* Change le curseur pour indiquer la cliquabilité */
 }
+
+/* Effet de survol pour le bouton de recherche */
 .search-button:hover {
-  background-color: #ff1f15;
+  background-color: #ff1f15; /* Assombrir légèrement la couleur de fond au survol */
 }
+
+/* Répétition des styles pour le tableau de bord pour surcharger/ajuster si nécessaire */
 .dashboard {
-  background: #ffffff;
-  border-radius: 20px;
-  padding: 20px;
-  width: 90%;
-  max-width: 500px;
-  margin: 20px auto;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  background: #ffffff; /* Couleur de fond claire pour contraste avec le reste */
+  border-radius: 20px; /* Bordures arrondies pour l'esthétique */
+  padding: 20px; /* Espacement intérieur autour du contenu */
+  width: 90%; /* Prend 90% de la largeur disponible du conteneur parent */
+  max-width: 500px; /* Largeur maximale pour une meilleure lisibilité sur les grands écrans */
+  margin: 20px auto; /* Centre le tableau de bord horizontalement */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Ombre portée pour un effet de profondeur */
 }
+
+/* Styles pour l'en-tête */
 .header {
-  text-align: center;
-  margin-bottom: 20px;
+  text-align: center; /* Centre le texte et les images horizontalement */
+  margin-bottom: 20px; /* Espacement en dessous de l'en-tête */
 }
+
+/* Styles spécifiques pour les images dans l'en-tête */
 .header img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
+  max-width: 100%; /* Assure que l'image ne dépasse pas la largeur du conteneur */
+  height: auto; /* Maintient le rapport hauteur/largeur de l'image */
+  border-radius: 10px; /* Bordures arrondies pour les images */
 }
+
+/* Conteneur pour les statistiques, englobe les éléments individuels des stats */
 .stats-container {
-  margin-bottom: 20px;
+  margin-bottom: 20px; /* Espace en dessous du conteneur pour séparation */
 }
+
+/* Style pour chaque bloc de statistique individuel */
 .stat {
-  background: #F0F0F0;
-  padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 15px;
+  background: #F0F0F0; /* Couleur de fond pour chaque stat */
+  padding: 15px; /* Espacement intérieur pour le contenu */
+  border-radius: 10px; /* Bordures arrondies pour un aspect plus doux */
+  margin-bottom: 15px; /* Espace en dessous de chaque bloc pour séparation */
 }
+
+/* En-tête de chaque bloc de statistique, contient le titre et un span (pourcentage ou info) */
 .stat-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
+  display: flex; /* Utilise Flexbox pour une mise en page flexible */
+  justify-content: space-between; /* Répartit l'espace entre les éléments */
+  align-items: center; /* Centre les éléments verticalement */
+  margin-bottom: 10px; /* Espace en dessous de l'en-tête */
 }
+
+/* Style pour le titre dans l'en-tête des statistiques */
 .stat-header h2 {
-  font-size: 1.2em;
-  font-weight: 500;
+  font-size: 1.2em; /* Taille de police pour le titre */
+  font-weight: 500; /* Poids de la police pour le titre */
 }
+
+/* Style pour le span dans l'en-tête, typiquement pour afficher un pourcentage ou une information clé */
 .stat-header span {
-  background: #D8D8D8;
-  padding: 2px 8px;
-  border-radius: 5px;
-  font-size: 0.9em;
+  background: #D8D8D8; /* Couleur de fond pour le span */
+  padding: 2px 8px; /* Espacement intérieur */
+  border-radius: 5px; /* Bordures arrondies */
+  font-size: 0.9em; /* Taille de police ajustée pour le contenu du span */
 }
+
+/* Conteneur pour un graphique ou une visualisation dans le bloc de statistique */
 .stat-chart {
-  height: 100px;
-  background: #D8D8D8; /* Placeholder for chart */
+  height: 100px; /* Hauteur fixe pour le graphique */
+  background: #D8D8D8; /* Couleur de fond comme placeholder pour le graphique */
 }
+
+/* Style pour le pied de page */
 .footer {
-  text-align: center;
-  padding: 15px 0;
-  font-size: 0.9em;
+  text-align: center; /* Centre le texte horizontalement */
+  padding: 15px 0; /* Espacement vertical */
+  font-size: 0.9em; /* Taille de police ajustée */
 }
-/* Style for the progress bar */
+
+/* Style pour le conteneur de la barre de progression */
 .progress-bar-container {
-  width: 100%;
-  background: #e0e0e0;
-  border-radius: 5px;
-  overflow: hidden;
+  width: 100%; /* Prend toute la largeur disponible */
+  background: #e0e0e0; /* Couleur de fond pour la barre de fond */
+  border-radius: 5px; /* Bordures arrondies */
+  overflow: hidden; /* Cache les débordements, utile pour les barres de progression internes */
 }
 
+
+/* Style global pour la balise progress, afin de personnaliser l'apparence des barres de progression */
 progress {
-  width: 100%;
-  -webkit-appearance: none; /* Override default appearance */
-  appearance: none; /* Remove default appearance */
-  height: 20px; /* Specified height */
+  width: 100%; /* Prend toute la largeur disponible de son conteneur */
+  -webkit-appearance: none; /* Supprime l'apparence par défaut sur WebKit/Blink */
+  appearance: none; /* Supprime l'apparence par défaut pour tous les navigateurs */
+  height: 20px; /* Hauteur spécifiée pour la barre de progression */
 }
 
+/* Style pour la barre de fond de la barre de progression sur WebKit/Blink */
 progress::-webkit-progress-bar {
-  background-color: #e0e0e0;
-  border-radius: 5px;
+  background-color: #e0e0e0; /* Couleur de fond pour la barre de progression */
+  border-radius: 5px; /* Bordures arrondies pour un aspect esthétique */
 }
 
+/* Style pour la valeur de la barre de progression sur WebKit/Blink */
 progress::-webkit-progress-value {
-  background-color: #ff5e57;
-  border-radius: 5px;
+  background-color: #ff5e57; /* Couleur de fond pour la partie remplie de la barre */
+  border-radius: 5px; /* Bordures arrondies pour un aspect esthétique */
 }
 
+/* Style pour la valeur de la barre de progression sur Mozilla */
 progress::-moz-progress-bar {
-  background-color: #ff5e57;
-  border-radius: 5px;
+  background-color: #ff5e57; /* Couleur de fond pour la partie remplie de la barre */
+  border-radius: 5px; /* Bordures arrondies pour un aspect esthétique */
 }
-/* Styles supplémentaires pour le bouton de recherche */
+
+/* Styles supplémentaires pour le conteneur de recherche */
 .search-container {
-  text-align: center;
-  padding: 10px;
+  text-align: center; /* Centre le contenu horizontalement */
+  padding: 10px; /* Espacement autour du contenu */
 }
 
+/* Style pour la boîte de recherche */
 .search-box {
-  padding: 8px;
-  margin-right: 5px;
-  border: none;
-  border-radius: 5px;
+  padding: 8px; /* Espacement intérieur pour le texte */
+  margin-right: 5px; /* Espacement à droite pour séparer de l'élément suivant */
+  border: none; /* Aucune bordure pour un look moderne */
+  border-radius: 5px; /* Bordures arrondies pour l'esthétique */
 }
 
+/* Style pour le bouton de recherche */
 .search-button {
-  padding: 8px;
-  background-color: #dc4326;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  padding: 8px; /* Espacement intérieur pour le texte */
+  background-color: #dc4326; /* Couleur de fond pour attirer l'attention */
+  color: white; /* Couleur du texte pour le contraste */
+  border: none; /* Aucune bordure pour un look moderne */
+  border-radius: 5px; /* Bordures arrondies pour l'esthétique */
+  cursor: pointer; /* Change le curseur pour indiquer la cliquabilité */
 }
 
+/* Style pour le bouton de recherche lors du survol */
 .search-button:hover {
-  background-color: #dc4326;
+  background-color: #dc4326; /* Assombrir légèrement au survol pour un effet visuel */
 }
+
+/* Style répété pour la barre d'en-tête supérieure pour clarification ou ajustements */
 .header-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px; /* Ajouté un padding horizontal pour centrer les éléments */
+  display: flex; /* Utilise Flexbox pour une mise en page flexible */
+  justify-content: space-between; /* Espacement entre les éléments */
+  align-items: center; /* Alignement des éléments verticalement */
+  padding: 10px 20px; /* Espacement intérieur pour centrer les éléments */
 }
-
-
 
 /* Styles supplémentaires pour la liste d'améliorations */
 .improvements {
-  margin-top: 20px;
-  background: #F0F0F0;
-  padding: 15px;
-  border-radius: 10px;
-  list-style: none; /* Retire les puces de liste par défaut */
+  margin-top: 20px; /* Espacement au-dessus de la liste */
+  background: #F0F0F0; /* Couleur de fond pour distinguer la liste */
+  padding: 15px; /* Espacement intérieur pour le contenu de la liste */
+  border-radius: 10px; /* Bordures arrondies pour un aspect esthétique */
+  list-style: none; /* Supprime les puces par défaut des éléments de liste */
 }
 
+/* Style pour chaque élément de la liste d'améliorations */
 .improvements li {
-  margin-bottom: 10px;
-  padding-left: 15px; /* Espacement à gauche pour les puces personnalisées ou les numéros */
+  margin-bottom: 10px; /* Espacement en dessous de chaque élément pour séparation */
+  padding-left: 15px; /* Espacement à gauche pour alignement du texte */
 }
 
+/* Ajoute une puce personnalisée avant chaque élément de la liste */
 .improvements li:before {
-  content: '•'; /* Ajoute une puce personnalisée */
-  color: #dc4326; /* Couleur de la puce */
+  content: '•'; /* Caractère utilisé comme puce */
+  color: #dc4326; /* Couleur de la puce pour un contraste */
   display: inline-block;
-  width: 20px; /* Espace pour la puce */
-  margin-leform-ft: -20px; /* Alignement de la puce */
+  width: 20px; /* Largeur fixe pour aligner les puces */
+  margin-left: -20px; /* Ajuste l'alignement des puces avec le texte */
 }
+
+/* Styles unifiés pour les contrôles de formulaire, incluant une correction pour les marges */
 .form-control, .form-control-fullwidth {
-  padding: 10px;
-  border: 1px solid #D8D8D8;
-  border-radius: 5px;
-  font-size: 16px;
-  margin-bottom: 5px; /* Adjust spacing below inputs */
+  padding: 10px; /* Espacement intérieur pour le texte */
+  border: 1px solid #D8D8D8; /* Bordure subtile pour délimiter le champ */
+  border-radius: 5px; /* Bordures arrondies */
+  font-size: 16px; /* Taille de police pour une meilleure lisibilité */
+  margin-bottom: 5px; /* Espacement en dessous de chaque contrôle */
 }
+
+/* Style spécifique pour les contrôles occupant toute la largeur disponible */
 .form-control-fullwidth {
-  width: calc(100% - 20px); /* Full width minus padding */
+  width: calc(100% - 20px); /* Calcule la largeur totale moins les paddings */
 }
+
+/* Ajustements pour le bouton de recherche pour occuper toute la largeur */
 .search-button {
   padding: 10px 0;
-  width: 100%; /* Make the button full width */
+  width: 100%; /* Fait en sorte que le bouton occupe toute la largeur disponible */
 }
 
-/* Add new style for textarea */
+/* Style pour les zones de texte avec une hauteur fixe et la possibilité de redimensionnement vertical */
 .form-control-textarea {
-  height: 150px; /* Set a fixed height */
-  resize: vertical; /* Allows the user to vertically resize the textarea */
+  height: 150px; /* Hauteur fixe pour les zones de texte */
+  resize: vertical; /* Permet le redimensionnement vertical uniquement */
 }
 
-/* Ensure consistent margin for all input elements */
+/* Assure une marge cohérente pour tous les éléments de formulaire */
 .form-control, .form-control-fullwidth, .search-button {
-  margin-top: 10px;
-}
-.form-control, .form-control-fullwidth, .form-control-textarea {
-  /* existing styles */
-  box-sizing: border-box; /* Add this line */
-}
-#stats-block {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease-in-out;
+  margin-top: 10px; /* Espacement uniforme au-dessus de chaque élément */
 }
 
+/* Application de box-sizing pour tous les contrôles de formulaire pour inclure padding et border dans la dimension */
+.form-control, .form-control-fullwidth, .form-control-textarea {
+  box-sizing: border-box; /* La largeur et la hauteur incluent le padding et la bordure */
+}
+
+/* Style pour le bloc de statistiques caché par défaut avec une transition pour l'affichage */
+#stats-block {
+  max-height: 0; /* Commence caché */
+  overflow: hidden; /* Cache le contenu débordant */
+  transition: max-height 0.5s ease-in-out; /* Animation douce pour l'affichage */
+}
+
+/* Style lorsque le bloc de statistiques est rendu visible */
 #stats-block.visible {
-  max-height: 1000px; /* Adjust this value based on the maximum possible height of your stats block */
+  max-height: 1000px; /* Hauteur maximale pour permettre l'affichage du contenu */
 }
