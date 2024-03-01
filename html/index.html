@@ -4,19 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive design -->
   <title>ConstrucTaux</title> <!-- Titre de la page -->
-  <link rel="stylesheet" href="styles.css"> <!-- Lien vers le CSS -->
+  <link rel="stylesheet" href="../css/styles.css"> <!-- Lien vers le CSS -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Optimisation du chargement des polices -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> <!-- Polices Montserrat et Roboto -->
   <!-- API Google Maps -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD95RSCT8ytUMBSu1hLLjzfxQH8xpYXhmg&libraries=places&language=fr"></script>
-  <script src="script.js"></script> <!-- Scripts JS -->
+  <script src="../js/script.js"></script> <!-- Scripts JS -->
 </head>
 
 <body>
 <div class="header-top">
   <!-- Section d'en-tête avec logo et nom du site -->
   <div class="site-branding">
-    <img class="logo" src="logo.png"> <!-- Logo du site -->
+    <img class="logo" src="../public/logo.png"> <!-- Logo du site -->
     <span class="site-name">ConstrucTaux</span> <!-- Nom du site -->
   </div>
 </div>
@@ -397,7 +397,7 @@
     <!-- Conteneur pour le bouton de recherche -->
     <div class="search-container">
       <!-- Bouton de soumission du formulaire pour lancer la recherche -->
-      <button type="submit" class="search-button" id="sub-Button" onclick="loadMap()">Rechercher</button>
+      <button type="submit" class="search-button" id="sub-Button" >Rechercher</button>
       <!-- Le bouton exécute la fonction 'loadMap()' lorsqu'il est cliqué, déclenchant la recherche selon les critères définis par l'utilisateur dans le formulaire -->
     </div>
   </form> <!-- Fin du formulaire -->

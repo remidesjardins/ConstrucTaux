@@ -63,18 +63,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Ajoute un écouteur d'événement pour initialiser l'autocomplétion lors du chargement de la page
     google.maps.event.addDomListener(window, 'load', initAutocomplete);
-});
 
 // Fonction pour charger une carte Google Maps basée sur la valeur de la ville entrée
-function loadMap() {
-    var city = document.getElementById('city').value; // Récupère la valeur entrée pour la ville
-    console.log(city); // Affiche la ville dans la console pour débogage
+    document.getElementById('sub-Button').addEventListener('click' , function () {
+        const city = document.getElementById('city').value; // Récupère la valeur entrée pour la ville
+        console.log(city); // Affiche la ville dans la console pour débogage
 
-    // Vérifie si une ville a été saisie avant de continuer
-    if (!city) {
-        return;
-    }
+        // Vérifie si une ville a été saisie avant de continuer
+        if (!city) {
+            return;
+        }
 
-    // Injecte le code HTML pour l'iframe de la carte Google Maps avec la ville spécifiée
-    document.getElementById('map').innerHTML = `<iframe width="450" height="450" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=${city}&key=AIzaSyDi2q6zJczhuf3onu0GapJtGUCNB4rGhlA"></iframe>`;
-}
+        // Injecte le code HTML pour l'iframe de la carte Google Maps avec la ville spécifiée
+        document.getElementById('map').innerHTML = `<iframe width="450" height="450" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=${city}&key=AIzaSyDi2q6zJczhuf3onu0GapJtGUCNB4rGhlA"></iframe>`;
+    })
+});
+
+
