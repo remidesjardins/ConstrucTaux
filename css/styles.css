@@ -63,7 +63,7 @@ body {
 /* Styles pour les contrôles de formulaire (input, select, textarea) */
 .form-control {
   width: 100%; /* Prend toute la largeur disponible du conteneur parent */
-  padding: 10px; /* Espacement intérieur pour le texte */
+  padding: 25px; /* Espacement intérieur pour le texte */
   border: 1px solid #D8D8D8; /* Bordure subtile pour le contraste */
   border-radius: 5px; /* Bordures arrondies pour l'esthétique */
   font-size: 16px; /* Taille de police pour une meilleure lisibilité */
@@ -72,9 +72,10 @@ body {
 
 /* Styles pour les étiquettes (labels) des champs de formulaire */
 label {
+  padding: 10px;
   display: block; /* Affiche le label sur sa propre ligne */
   margin-bottom: 5px; /* Espacement en dessous du label */
-  font-weight: 500; /* Poids de la police pour une meilleure visibilité */
+  font-weight: 500;
 }
 
 /* Conteneur pour le bouton de recherche */
@@ -229,17 +230,20 @@ progress::-moz-progress-bar {
 
 /* Style pour le bouton de recherche */
 .search-button {
+  height: 40px;
+  font-size: large;
   padding: 8px; /* Espacement intérieur pour le texte */
   background-color: #dc4326; /* Couleur de fond pour attirer l'attention */
   color: white; /* Couleur du texte pour le contraste */
   border: none; /* Aucune bordure pour un look moderne */
-  border-radius: 5px; /* Bordures arrondies pour l'esthétique */
+  border-radius: 10px; /* Bordures arrondies pour l'esthétique */
   cursor: pointer; /* Change le curseur pour indiquer la cliquabilité */
 }
 
 /* Style pour le bouton de recherche lors du survol */
 .search-button:hover {
-  background-color: #dc4326; /* Assombrir légèrement au survol pour un effet visuel */
+  background-color: #dc3313;
+  scale: 1;
 }
 
 /* Style répété pour la barre d'en-tête supérieure pour clarification ou ajustements */
@@ -251,13 +255,7 @@ progress::-moz-progress-bar {
 }
 
 /* Styles supplémentaires pour la liste d'améliorations */
-.improvements {
-  margin-top: 20px; /* Espacement au-dessus de la liste */
-  background: #F0F0F0; /* Couleur de fond pour distinguer la liste */
-  padding: 15px; /* Espacement intérieur pour le contenu de la liste */
-  border-radius: 10px; /* Bordures arrondies pour un aspect esthétique */
-  list-style: none; /* Supprime les puces par défaut des éléments de liste */
-}
+
 
 /* Style pour chaque élément de la liste d'améliorations */
 .improvements li {
@@ -320,4 +318,53 @@ progress::-moz-progress-bar {
 /* Style lorsque le bloc de statistiques est rendu visible */
 #stats-block.visible {
   max-height: 1000px; /* Hauteur maximale pour permettre l'affichage du contenu */
+}
+
+/* Variables CSS */
+:root {
+  --primary-color: #ff1f15;
+  --secondary-color: #ffdedd;
+  --background-color: #fff1f0;
+  --text-color: #333;
+  --font-family-main: 'Roboto Light', sans-serif;
+  --font-family-alt: 'Montserrat', sans-serif;
+  --border-radius: 20px;
+  --box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  --input-border-color: #D8D8D8;
+  --improvement-icon-color: #dc4326;
+  --improvement-background: #f9f9f9;
+  --improvement-border-color: #ececec;
+}
+
+/* Styles pour la liste d'améliorations */
+.improvements {
+  margin-top: 20px;
+  background: var(--improvement-background);
+  padding: 15px;
+  border-radius: 10px;
+  list-style: none;
+  box-shadow: var(--box-shadow);
+  border: 1px solid var(--improvement-border-color);
+}
+
+.improvements li {
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  background: white;
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease-in-out;
+}
+
+.improvements li:hover {
+  transform: scale(1.02);
+}
+
+.improvements li:before {
+  content: '✔';
+  color: var(--improvement-icon-color);
+  font-size: 1.5em;
+  margin-right: 10px;
 }
