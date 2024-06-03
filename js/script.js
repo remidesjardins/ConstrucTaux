@@ -227,6 +227,88 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
+    var cityData = {
+        // Les 20 plus grandes villes françaises
+        'Paris': { requested: 1200, accepted: 1080 },
+        'Marseille': { requested: 900, accepted: 765 },
+        'Lyon': { requested: 800, accepted: 640 },
+        'Toulouse': { requested: 750, accepted: 600 },
+        'Nice': { requested: 700, accepted: 490 },
+        'Nantes': { requested: 650, accepted: 585 },
+        'Strasbourg': { requested: 600, accepted: 480 },
+        'Montpellier': { requested: 550, accepted: 385 },
+        'Bordeaux': { requested: 500, accepted: 425 },
+        'Lille': { requested: 480, accepted: 360 },
+        'Rennes': { requested: 460, accepted: 345 },
+        'Reims': { requested: 440, accepted: 352 },
+        'Le Havre': { requested: 420, accepted: 294 },
+        'Saint-Étienne': { requested: 400, accepted: 260 },
+        'Toulon': { requested: 380, accepted: 266 },
+        'Grenoble': { requested: 360, accepted: 270 },
+        'Dijon': { requested: 340, accepted: 272 },
+        'Angers': { requested: 320, accepted: 240 },
+        'Nîmes': { requested: 300, accepted: 210 },
+        'Villeurbanne': { requested: 280, accepted: 196 },
+
+        // Les 20 villes moyennes
+        'Amiens': { requested: 260, accepted: 182 },
+        'Metz': { requested: 240, accepted: 192 },
+        'Besançon': { requested: 220, accepted: 176 },
+        'Orléans': { requested: 200, accepted: 160 },
+        'Rouen': { requested: 180, accepted: 126 },
+        'Mulhouse': { requested: 160, accepted: 112 },
+        'Caen': { requested: 140, accepted: 98 },
+        'Nancy': { requested: 120, accepted: 96 },
+        'Perpignan': { requested: 100, accepted: 70 },
+        'Poitiers': { requested: 90, accepted: 63 },
+        'Béziers': { requested: 80, accepted: 56 },
+        'Valence': { requested: 70, accepted: 49 },
+        'La Rochelle': { requested: 60, accepted: 42 },
+        'Saint-Nazaire': { requested: 50, accepted: 35 },
+        'Colmar': { requested: 40, accepted: 28 },
+        'Ajaccio': { requested: 30, accepted: 21 },
+        'Versailles': { requested: 20, accepted: 18 },
+        'Boulogne-sur-Mer': { requested: 15, accepted: 10 },
+        'Sète': { requested: 10, accepted: 7 },
+        'Chambéry': { requested: 5, accepted: 4 },
+
+        // Les 21 petites villes
+        'Villejuif': { requested: 20, accepted: 18 },
+        'Arles': { requested: 18, accepted: 15 },
+        'Bayonne': { requested: 17, accepted: 14 },
+        'Évreux': { requested: 16, accepted: 13 },
+        'Vannes': { requested: 15, accepted: 12 },
+        'Sartrouville': { requested: 14, accepted: 11 },
+        'Meudon': { requested: 13, accepted: 10 },
+        'Châteauroux': { requested: 12, accepted: 9 },
+        'Cagnes-sur-Mer': { requested: 11, accepted: 8 },
+        'Saint-Brieuc': { requested: 10, accepted: 7 },
+        'Les Sables-d\'Olonne': { requested: 9, accepted: 6 },
+        'Gap': { requested: 8, accepted: 5 },
+        'Albi': { requested: 7, accepted: 5 },
+        'Brive-la-Gaillarde': { requested: 6, accepted: 4 },
+        'Montauban': { requested: 5, accepted: 3 },
+        'Castres': { requested: 4, accepted: 3 },
+        'Salon-de-Provence': { requested: 3, accepted: 2 },
+        'Blois': { requested: 2, accepted: 1 },
+        'Carcassonne': { requested: 1, accepted: 1 },
+        'Bastia': { requested: 1, accepted: 1 },
+        'Saint-Malo': { requested: 1, accepted: 1 }
+    };
+
+
+
+    var cityFactors = {};
+    for (var city in cityData) {
+        var data = cityData[city];
+        var factor = data.accepted / data.requested;
+        cityFactors[city] = factor;
+    }
+
+    console.log(cityFactors);
+
+
+
     constructionTypeSelect.addEventListener('change', function () {
         detailGroups.forEach(function (group) {
             group.style.display = 'none';
@@ -285,8 +367,22 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
-        return (totalScore / maxScore) * 100;
+        var baseChance = (totalScore / maxScore) * 100;
+        console.log('Base chance:', baseChance);
+
+
+        // Ajustement en fonction de la ville
+        var city = document.getElementById('city').value;
+        console.log('City:', city);
+
+        var cityFactor = cityFactors[city] || 1; // Default factor is 1 if the city is not listed
+        var adjustedChance = baseChance * cityFactor;
+        console.log('City factor:', cityFactor);
+        console.log('Adjusted chance:', adjustedChance);
+
+        return adjustedChance;
     }
+
 
     function calculateEcologicScore() {
         var constructionType = constructionTypeSelect.value;
@@ -393,6 +489,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+
     function initAutocomplete() {
         var input = document.getElementById('city');
         var options = {
@@ -407,7 +504,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 window.alert("No details available for input: '" + place.name + "'");
                 return;
             }
-            document.getElementById('city').value = place.formatted_address;
+            // Utiliser seulement la première partie du nom de la ville avant toute virgule
+            var cityName = place.name.split(',')[0].trim();
+            document.getElementById('city').value = cityName;
+            console.log('City selected:', cityName);
         });
 
         input.addEventListener('keydown', function(e) {
